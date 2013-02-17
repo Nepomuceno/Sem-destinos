@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemDestinos.Interface", "SemDestinos.Interface\SemDestinos.Interface.csproj", "{9EFC0A48-9B97-459D-AE1C-4AB552D8EEDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9EFC0A48-9B97-459D-AE1C-4AB552D8EEDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EFC0A48-9B97-459D-AE1C-4AB552D8EEDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EFC0A48-9B97-459D-AE1C-4AB552D8EEDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EFC0A48-9B97-459D-AE1C-4AB552D8EEDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
