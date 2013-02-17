@@ -39,6 +39,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.3.1.7705, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="BundleTransformer.Core">
+      <HintPath>..\packages\BundleTransformer.Core.1.6.18\lib\net40\BundleTransformer.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BundleTransformer.Less">
+      <HintPath>..\packages\BundleTransformer.Less.1.6.19\lib\net40\BundleTransformer.Less.dll</HintPath>
+    </Reference>
+    <Reference Include="dotless.Core">
+      <HintPath>..\packages\dotless.1.3.1.0\lib\dotless.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -49,6 +62,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
@@ -90,8 +106,13 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="WebGrease, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -100,7 +121,23 @@
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\less.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -118,6 +155,134 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\wells.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\variables.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\utilities.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\type.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\tooltip.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\thumbnails.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\tables.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\sprites.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\scaffolding.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\responsive-utilities.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\responsive-navbar.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\responsive-768px-979px.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\responsive-767px-max.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\responsive-1200px-min.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\responsive.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\reset.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\progress-bars.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\popovers.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\pagination.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\pager.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\navs.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\navbar.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\modals.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\mixins.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\media.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\layouts.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\labels-badges.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\hero-unit.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\grid.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\forms.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\dropdowns.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\component-animations.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\code.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\close.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\carousel.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\buttons.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\button-groups.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\breadcrumbs.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\bootstrap.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\alerts.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\accordion.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BundleTransformer.Configuration.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -134,9 +299,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>1195</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:64719/</IISUrl>
+          <IISUrl>http://localhost/SemDestino</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
