@@ -14,34 +14,39 @@ namespace SemDestinos.Interface.App_Start
       {
          var cssTransformer = new CssTransformer();
          var jsTransformer = new JsTransformer();
-         var nullOrderer = new NullOrderer();
 
-         var commonStylesBundle = new Bundle("~/Bundles/CommonStyles");
+         var commonStylesBundle = new Bundle("~/css");
          commonStylesBundle.Include(
-             "~/Content/less/bootstrap.css");
+             "~/Content/less/bootstrap.less");
          commonStylesBundle.Transforms.Add(cssTransformer);
-         commonStylesBundle.Orderer = nullOrderer;
 
          bundles.Add(commonStylesBundle);
 
-         var modernizrBundle = new Bundle("~/Bundles/Modernizr");
+         var modernizrBundle = new Bundle("~/modernizr");
          modernizrBundle.Include("~/Scripts/modernizr-2.*");
          modernizrBundle.Transforms.Add(jsTransformer);
-         modernizrBundle.Orderer = nullOrderer;
 
          bundles.Add(modernizrBundle);
 
-         var commonScriptsBundle = new Bundle("~/Bundles/CommonScripts");
+         var commonScriptsBundle = new Bundle("~/jquery");
          commonScriptsBundle.Include(
-            "~/Scripts/bootstrap.js",
             "~/Scripts/jquery-{version}.js",
-            "~/Scripts/jquery.validate.js",
-            "~/Scripts/jquery.validate.unobtrusive.js",
-            "~/Scripts/jquery.unobtrusive-ajax.js");
+            "~/Scripts/jquery-migrate-{version}.js"
+            );
          commonScriptsBundle.Transforms.Add(jsTransformer);
-         commonScriptsBundle.Orderer = nullOrderer;
-
          bundles.Add(commonScriptsBundle);
+         
+        var jqueryDependentScriptsBundle = new Bundle("~/js");
+            jqueryDependentScriptsBundle.Include(
+                "~/Scripts/bootstrap.js",
+                "~/Scripts/jquery.validate.js",
+                "~/Scripts/jquery.validate.unobtrusive.js"
+                , "~/Scripts/jquery.unobtrusive-ajax.js");
+            jqueryDependentScriptsBundle.Transforms.Add(jsTransformer);
+            bundles.Add(jqueryDependentScriptsBundle);
+
+
+         
       }
 
     }

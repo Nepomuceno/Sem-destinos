@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css" media="screen" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="~/modernizr"></script>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    @RenderPage("~/Views/Shared/_Navbar.cshtml")
+    <div class="clearfix"></div>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <!-- /container -->
+
+    <script type="text/javascript" src="~/jquery"></script>
+    <script type="text/javascript" src="~/js"></script>
+    @RenderSection("scripts", false)
+</body>
+</html>
